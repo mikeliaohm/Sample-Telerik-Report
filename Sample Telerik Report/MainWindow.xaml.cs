@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Telerik.Reporting;
 
 namespace Sample_Telerik_Report
 {
@@ -25,6 +26,14 @@ namespace Sample_Telerik_Report
             InitializeComponent();
 
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            InstanceReportSource reportSource;
+            reportSource = new InstanceReportSource { ReportDocument = new Report1() };
+            SampleReport.ReportSource = reportSource;
+            SampleReport.RefreshReport();
         }
     }
 }
