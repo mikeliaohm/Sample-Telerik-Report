@@ -9,6 +9,5 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Orientation="Vertical">
         <Button Click="Button_Click" Content="Open"/>
-        <telerik:ReportViewer x:Name="SampleReport"/>
     </StackPanel>
 </Window>

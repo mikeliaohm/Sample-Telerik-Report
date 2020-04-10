@@ -32,8 +32,6 @@ namespace Sample_Telerik_Report
         {
             InstanceReportSource reportSource;
             reportSource = new InstanceReportSource { ReportDocument = new Report1() };
-            SampleReport.ReportSource = reportSource;
-            SampleReport.RefreshReport();
         }
     }
 }
