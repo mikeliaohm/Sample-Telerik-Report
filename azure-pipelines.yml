@@ -14,33 +14,40 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
-- task: NuGetCommand@2
-  inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'config'
-    nugetConfigPath: 'NuGet.Config'
-    externalFeedCredentials: 'Telerik'
-    restoreDirectory: 'Release/'
-    
-- task: NuGetCommand@2
-  inputs:
-    command: 'restore'
-    restoreSolution: '$(solution)'
-    feedsToUse: 'select'
-    vstsFeed: 'f92bb8e0-5660-419a-abe8-6903dfccab0d/bcab7cb1-9312-41ab-a1fb-13db367fa302'
-    restoreDirectory: 'obj/Release/'
+stages:
+- stage: nuget_restore
+  displayName: 'Restore nuget package'
+  jobs:
+  - job: nuget_package_restore
+
+    steps:
+
+    - task: NuGetToolInstaller@1
+    - task: NuGetCommand@2
+      inputs:
+        command: 'restore'
+        restoreSolution: '**/*.sln'
+        feedsToUse: 'config'
+        nugetConfigPath: 'NuGet.Config'
+        externalFeedCredentials: 'Telerik'
+        restoreDirectory: 'Release/'
+      
+    - task: NuGetCommand@2
+      inputs:
+        command: 'restore'
+        restoreSolution: '$(solution)'
+        feedsToUse: 'select'
+        vstsFeed: 'f92bb8e0-5660-419a-abe8-6903dfccab0d/bcab7cb1-9312-41ab-a1fb-13db367fa302'
+        restoreDirectory: 'obj/Release/'
 
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    - task: VSTest@2
+      inputs:
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
