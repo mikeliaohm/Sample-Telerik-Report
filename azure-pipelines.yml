@@ -25,12 +25,12 @@ steps:
     externalFeedCredentials: 'Telerik'
     restoreDirectory: '/Release/'
     
-# - task: NuGetCommand@2
-#   inputs:
-#     command: 'restore'
-#     restoreSolution: '$(solution)'
-#     feedsToUse: 'select'
-#     vstsFeed: 'f92bb8e0-5660-419a-abe8-6903dfccab0d/bcab7cb1-9312-41ab-a1fb-13db367fa302'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select'
+    vstsFeed: 'f92bb8e0-5660-419a-abe8-6903dfccab0d/bcab7cb1-9312-41ab-a1fb-13db367fa302'
 
 - task: VSBuild@1
   inputs:
