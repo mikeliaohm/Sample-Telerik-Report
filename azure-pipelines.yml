@@ -23,7 +23,7 @@ steps:
     feedsToUse: 'config'
     nugetConfigPath: 'NuGet.Config'
     externalFeedCredentials: 'Telerik'
-    restoreDirectory: 'Release/'
+    restoreDirectory: '/Release/'
     
 # - task: NuGetCommand@2
 #   inputs:
