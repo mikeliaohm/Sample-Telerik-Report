@@ -31,7 +31,7 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: 'select'
     vstsFeed: 'f92bb8e0-5660-419a-abe8-6903dfccab0d/bcab7cb1-9312-41ab-a1fb-13db367fa302'
-    restoreDirectory: 'obj/Release'
+    restoreDirectory: 'obj/Release/'
 
 
 - task: VSBuild@1
