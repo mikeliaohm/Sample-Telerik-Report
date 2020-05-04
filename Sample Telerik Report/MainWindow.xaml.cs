@@ -33,5 +33,10 @@ namespace Sample_Telerik_Report
             InstanceReportSource reportSource;
             reportSource = new InstanceReportSource { ReportDocument = new Report1() };
         }
+
+        private void RadButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Message");
+        }
     }
 }
