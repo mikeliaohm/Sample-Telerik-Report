@@ -19,8 +19,13 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
-
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'config'
+    nugetConfigPath: 'NuGet.Config'
+    externalFeedCredentials: 'Telerik'
+    restoreDirectory: '$(Build.SourcesDirectory)\packages\'
+    
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
