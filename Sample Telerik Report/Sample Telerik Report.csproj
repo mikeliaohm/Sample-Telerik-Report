@@ -58,8 +58,8 @@
   <ItemGroup>
     <PackageReference Include="Telerik.Reporting" Version="14.0.20.219" />
     <PackageReference Include="Telerik.ReportViewer.Wpf" Version="14.0.20.219" />
-    <PackageReference Include="Telerik.UI.for.Wpf.40" Version="2020.1.218" />
-    <PackageReference Include="Telerik.UI.for.Wpf.40.Xaml" Version="2020.1.218" />
+    <PackageReference Include="Telerik.UI.for.Wpf.45" Version="2020.1.218" />
+    <PackageReference Include="Telerik.UI.for.Wpf.45.Xaml" Version="2020.1.218" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
